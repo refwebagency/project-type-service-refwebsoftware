@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using ProjectTypeService.Data;
 using ProjectTypeService.Dtos;
 using ProjectTypeService.Models;
+using ProjectTypeService.SyncDataServices.Http;
 
 namespace ProjectTypeService.Controllers
 {
@@ -14,13 +15,17 @@ namespace ProjectTypeService.Controllers
     public class ProjectTypeController : ControllerBase
     {
         private readonly IProjectTypeRepo _repository;
+
+        private readonly ITemplateDataClient _templateDataClient;
+
         private readonly IMapper _mapper;
     
 
-        public ProjectTypeController(IProjectTypeRepo repository, IMapper mapper)
+        public ProjectTypeController(IProjectTypeRepo repository, IMapper mapper, ITemplateDataClient templateDataClient)
         {
             _repository = repository;
             _mapper = mapper;
+            _templateDataClient = templateDataClient;
         }
 
         /**Pour mettre en forme des résulat de GetAllProjectTypes, 
@@ -65,6 +70,15 @@ namespace ProjectTypeService.Controllers
             _repository.SaveChanges();
 
             var readProjectTypeDto = _mapper.Map<ProjectTypeReadDto>(projectTypeModel);
+
+            try
+            {
+                _templateDataClient.SendProjectTypeToTemplate(readProjectTypeDto);
+            }
+            catch (System.Exception ex)
+            {
+                Console.WriteLine("Erreur: " + ex.Message);
+            }
 
             //reourne une route qui renvoie avec un type de project specifique
             return CreatedAtRoute(nameof(GetProjectTypeById), new { Id = readProjectTypeDto.Id }, readProjectTypeDto);

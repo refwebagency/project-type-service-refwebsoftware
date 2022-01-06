@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using ProjectTypeService.Data;
+using ProjectTypeService.SyncDataServices.Http;
 
 namespace ProjectTypeService
 {
@@ -32,6 +33,7 @@ namespace ProjectTypeService
             services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("project_type"));
 
             services.AddScoped<IProjectTypeRepo, ProjectTypeRepo>();
+            services.AddHttpClient<ITemplateDataClient, HttpTemplateDataClient>();
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddControllers();
@@ -39,6 +41,8 @@ namespace ProjectTypeService
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProjectTypeService", Version = "v1" });
             });
+
+            Console.WriteLine("URL TemplateService }" + Configuration["TemplateService"]);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "04s9k4RZSkQXg2SHrgE8b7Ye55gdKsYQGtua1EMl3gL/Fxc7L9BPXRPmQgWZcwzes/CzCTFxEQli/sTI2gp4MA==",
+  "dgSpecHash": "OpreEXI7laG4xOybPbGl/8SG9yoyPEMtdyVa87gdd9fpxN1O3jMivpn1IsSdOY3kovyca0cGBLZE9b6L1ZW3nw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Maxime\\Desktop\\REF-WEB\\ProjectTypeService\\ProjectTypeService.csproj",
+  "projectFilePath": "C:\\Users\\Maxime\\Desktop\\project-type-service-refwebsoftware\\ProjectTypeService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Maxime\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Maxime\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

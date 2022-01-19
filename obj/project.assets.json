@@ -1056,11 +1056,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Maxime\\Desktop\\REF-WEB\\ProjectTypeService\\ProjectTypeService.csproj",
+      "projectUniqueName": "C:\\Users\\Maxime\\Desktop\\project-type-service-refwebsoftware\\ProjectTypeService.csproj",
       "projectName": "ProjectTypeService",
-      "projectPath": "C:\\Users\\Maxime\\Desktop\\REF-WEB\\ProjectTypeService\\ProjectTypeService.csproj",
+      "projectPath": "C:\\Users\\Maxime\\Desktop\\project-type-service-refwebsoftware\\ProjectTypeService.csproj",
       "packagesPath": "C:\\Users\\Maxime\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Maxime\\Desktop\\REF-WEB\\ProjectTypeService\\obj\\",
+      "outputPath": "C:\\Users\\Maxime\\Desktop\\project-type-service-refwebsoftware\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Maxime\\AppData\\Roaming\\NuGet\\NuGet.Config"

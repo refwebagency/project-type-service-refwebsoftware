@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Maxime\\Desktop\\REF-WEB\\ProjectTypeService\\ProjectTypeService.csproj": {}
+    "C:\\Users\\wuill\\OneDrive\\Documents\\GitHub\\project-type-service-refwebsoftware\\ProjectTypeService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Maxime\\Desktop\\REF-WEB\\ProjectTypeService\\ProjectTypeService.csproj": {
+    "C:\\Users\\wuill\\OneDrive\\Documents\\GitHub\\project-type-service-refwebsoftware\\ProjectTypeService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Maxime\\Desktop\\REF-WEB\\ProjectTypeService\\ProjectTypeService.csproj",
+        "projectUniqueName": "C:\\Users\\wuill\\OneDrive\\Documents\\GitHub\\project-type-service-refwebsoftware\\ProjectTypeService.csproj",
         "projectName": "ProjectTypeService",
-        "projectPath": "C:\\Users\\Maxime\\Desktop\\REF-WEB\\ProjectTypeService\\ProjectTypeService.csproj",
-        "packagesPath": "C:\\Users\\Maxime\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Maxime\\Desktop\\REF-WEB\\ProjectTypeService\\obj\\",
+        "projectPath": "C:\\Users\\wuill\\OneDrive\\Documents\\GitHub\\project-type-service-refwebsoftware\\ProjectTypeService.csproj",
+        "packagesPath": "C:\\Users\\wuill\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\wuill\\OneDrive\\Documents\\GitHub\\project-type-service-refwebsoftware\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Maxime\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\wuill\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -55,6 +55,10 @@
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[5.0.0, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.2.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

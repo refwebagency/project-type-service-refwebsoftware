@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using ProjectTypeService.AsyncDataClient;
 using ProjectTypeService.Data;
 using ProjectTypeService.Dtos;
 using ProjectTypeService.Models;
@@ -14,13 +15,17 @@ namespace ProjectTypeService.Controllers
     public class ProjectTypeController : ControllerBase
     {
         private readonly IProjectTypeRepo _repository;
+
         private readonly IMapper _mapper;
+
+        private readonly IMessageBusClient _messageBusClient;
     
 
-        public ProjectTypeController(IProjectTypeRepo repository, IMapper mapper)
+        public ProjectTypeController(IProjectTypeRepo repository, IMapper mapper, IMessageBusClient messageBusClient)
         {
             _repository = repository;
             _mapper = mapper;
+            _messageBusClient = messageBusClient;
         }
 
         /**Pour mettre en forme des résulat de GetAllProjectTypes, 
@@ -85,6 +90,19 @@ namespace ProjectTypeService.Controllers
             }
             _repository.UpdateProjectType(id);
             _repository.SaveChanges();
+
+            try
+            {
+                var projectTypeAsyncDto = _mapper.Map<ProjectTypeUpdateAsyncDto>(projectTypeModelFromRepo);
+                projectTypeAsyncDto.Event = "ProjectType_Updated";
+                
+                _messageBusClient.UpdatedProjectType(projectTypeAsyncDto);
+
+            }
+            catch (System.Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
             
             return CreatedAtRoute(nameof(GetProjectTypeById), new { Id = updateProjectTypeDto.Id }, updateProjectTypeDto);
         }

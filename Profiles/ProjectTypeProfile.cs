@@ -12,6 +12,9 @@ namespace ProjectTypeService.Profiles
             CreateMap<ProjectType, ProjectTypeReadDto>();
             CreateMap<ProjectTypeCreateDto, ProjectType>();
             CreateMap<ProjectTypeUpdateDto, ProjectType>();
+
+            //RabbitMQ
+            CreateMap<ProjectType, ProjectTypeUpdateAsyncDto>();
         }
     }
 }

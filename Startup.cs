@@ -41,6 +41,10 @@ namespace ProjectTypeService
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProjectTypeService", Version = "v1" });
             });
+            services.AddCors(options => options.AddPolicy("ApiCorsPolicy", builder =>
+            {
+                builder.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
+            }));
 
             Console.WriteLine("URL TemplateService }" + Configuration["TemplateService"]);
         }
@@ -60,6 +64,8 @@ namespace ProjectTypeService
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors("ApiCorsPolicy"); 
 
             app.UseEndpoints(endpoints =>
             {
